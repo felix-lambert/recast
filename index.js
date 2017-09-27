@@ -26,14 +26,14 @@ const getAllDomains = (callback) => {
             if (res.data.after) {   
                 getMoreDomains(callback, res.data.after);
             } else {
-                callback(`Can't get everything`, results);
+                callback(`Can't get all the domains`, results);
             }
         }); 
     }
     getMoreDomains(callback);
 }
 
-getAllDomains((err, everything) => {
+getAllDomains((err, domains) => {
     if (err) console.log('ERROR:', err);
-    console.log(JSON.stringify(everything, null, 2));
+    console.log(JSON.stringify(domains, null, 2));
 });
