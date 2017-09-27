@@ -2,7 +2,7 @@ const fetch = require('node-fetch');
 
 const getAllDomains = (callback) => {
     
-    var results = [];
+    let results = [];
 
     const getMoreDomains = (callback, after) => {
         const url = 'https://www.reddit.com/r/programming.json?' + (after ? 'after=' + encodeURIComponent(after) : '');
