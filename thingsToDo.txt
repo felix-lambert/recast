@@ -1,0 +1,42 @@
+- Add languages (Failed)
+- Build your own notification bot in Elixir (Success)
+    https://blog.recast.ai/build-notifier-bot-elixir/
+- Build your own notification bot in Elixir (Continue) (Success)
+    https://elixir-lang.org/
+- Get started with Elixir (Success)
+- How to use Random Access Navigation (RAN) to create smarter bots (Success)
+    https://blog.recast.ai/random-access-navigation-ran-tutorial/
+1 POMODORO
+- How to use Random Access Navigation (RAN) to create smarter bots (Continue) (Success)
+- How to use Random Access Navigation (RAN) to create smarter bots (Continue) (Success)
+- How to use Random Access Navigation (RAN) to create smarter bots (Continue) (Success)
+- How to use Random Access Navigation (RAN) to create smarter bots (Continue) (Success)
+    https://github.com/plieb/moviedbot
+2 POMODORO
+- Use a multilingual bot (Success)
+    https://blog.recast.ai/build-multilingual-bot-hour/ 
+- Use a multilingual bot (Continue) (Success)
+- Use a multilingual bot (Continue) (Success)
+- Redo starter kit (Contenur) (Success)
+- Redo starter kit (Continue)
+
+
+
+
+
+
+* Understand Supervisor behavior
+    https://hexdocs.pm/elixir/Supervisor.html
+* Checkout the message payload page
+    https://github.com/RecastAI/SDK-NodeJS/wiki/Message-payload
+* Checkout GenServer behavior with Elixir
+    https://hexdocs.pm/elixir/GenServer.html
+* Checkout RAN
+    https://medium.com/assist/theres-a-dozen-ways-to-order-a-coffee-why-do-dumb-bots-only-allow-one-27230542636d
+* Put NodeJS robot linter on Visual Studio
+* Install nodemon
+* Configurer Visual Studio space à 2
+
+Important code + commands
+# netstat -ntlp | grep LISTEN
+# mix run —no-halt (run vigile)
