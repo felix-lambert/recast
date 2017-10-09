@@ -14,7 +14,14 @@ const getAllDomains = (callback) => {
 
         results = results.concat(domain);
         results = results.filter(onlyUnique);
-        body.data.after ? getMoreDomains(callback, body.data.after) : callback(`Can't get all the domains`, results);
+        if (body.data.after) {
+            getMoreDomains(callback, body.data.after) 
+        } else {
+            body.data.children.map(data => {
+                console.log(data.data.created);
+            });
+            // callback(`Can't get all the domains`, results);
+        }
     }
     getMoreDomains(callback);
 }

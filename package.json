@@ -4,7 +4,8 @@
   "description": "test",
   "main": "index.js",
   "dependencies": {
-    "node-fetch": "^1.7.3"
+    "node-fetch": "1.7.3",
+    "recastai": "3.4.1"
   },
   "devDependencies": {},
   "scripts": {
