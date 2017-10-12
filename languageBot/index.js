@@ -15,6 +15,7 @@ app.post('/', talkToBot)
 
 // It's important to put at the end
 app.use((err, req, res, next) => {
+  console.log(err.message)
   if (!res.headersSent) {
     res.status(codeHTTP.BAD_REQUEST).send({error: err.message})
   }

@@ -20,28 +20,28 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">66.67% </span>
+        <span class="strong">91.3% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>14/21</span>
+        <span class='fraction'>21/23</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/6</span>
+        <span class='fraction'>6/6</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">55.56% </span>
+        <span class="strong">90% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>5/9</span>
+        <span class='fraction'>9/10</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">66.67% </span>
+        <span class="strong">91.3% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>14/21</span>
+        <span class='fraction'>21/23</span>
       </div>
     </div>
   </div>
-  <div class='status-line medium'></div>
+  <div class='status-line high'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -96,7 +96,11 @@
 51
 52
 53
-54</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+54
+55
+56
+57
+58</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -108,41 +112,45 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -167,9 +175,9 @@ function sendToRecast(url, jsonData) {
   })
 }
 &nbsp;
-const processBotResponse = (senderId, textMessageToSendToBot, conversation, language = <span class="branch-0 cbranch-no" title="branch not covered" >'en')</span> =&gt; (
+const processBotResponse = (senderId, textMessageToSendToBot, conversation, language = 'en') =&gt; (
   new Promise((resolve, reject) =&gt; {
-    sendToRecast(`${recastAPIURL}/v2/converse`, {
+    return sendToRecast(`${recastAPIURL}/v2/converse`, {
       text: textMessageToSendToBot,
       language: language,
       conversation_token: senderId
@@ -183,19 +191,23 @@ const processBotResponse = (senderId, textMessageToSendToBot, conversation, lang
             content: botReply
           }]
         }).then(sendDiscussionRes =&gt; resolve(sendDiscussionRes)
-      ).catch(<span class="fstat-no" title="function not covered" >(e</span>rr) =&gt; <span class="cstat-no" title="statement not covered" >reject(err))</span>
-    }).catch(<span class="fstat-no" title="function not covered" >(e</span>rr) =&gt; <span class="cstat-no" title="statement not covered" >reject(err))</span>
+      ).catch(err =&gt; reject(err))
+    }).catch(err =&gt; reject(err))
   })
 )
 &nbsp;
-const talkToBotMain = <span class="fstat-no" title="function not covered" >(r</span>eq, response, next) =&gt; {
-<span class="cstat-no" title="statement not covered" >  if (req.body.message &amp;&amp; req.body.message.conversation &amp;&amp; req.body.senderId) {</span>
-    const { senderId, message } = <span class="cstat-no" title="statement not covered" >req.body</span>
+const talkToBotMain = (req, response, next) =&gt; {
+  if (req.body.message &amp;&amp; req.body.message.conversation &amp;&amp; req.body.senderId) {
+    const { senderId, message } = req.body
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    processBotResponse(senderId, message.attachment.content, message.conversation)</span>
-      .then(<span class="fstat-no" title="function not covered" >re</span>s =&gt; <span class="cstat-no" title="statement not covered" >response.status(codeHTTP.SUCCESS).json(res))</span>
+    return processBotResponse(senderId, message.attachment.content, message.conversation)
+      .then(res =&gt; response.status(codeHTTP.SUCCESS).json(res))
+      .catch(<span class="fstat-no" title="function not covered" >er</span>r =&gt; {
+<span class="cstat-no" title="statement not covered" >        console.log('inside catch')</span>
+<span class="cstat-no" title="statement not covered" >        return next(err)</span>
+      })
   } else {
-<span class="cstat-no" title="statement not covered" >    return next(new Error('Some data has not been provided'))</span>
+    return next(new Error('Some data has not been provided'))
   }
 }
 &nbsp;
@@ -208,7 +220,7 @@ module.exports = {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Oct 12 2017 15:54:28 GMT+0200 (CEST)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Oct 12 2017 18:29:05 GMT+0200 (CEST)
 </div>
 </div>
 <script src="../../prettify.js"></script>

@@ -3,17 +3,15 @@ const chaiHttp = require('chai-http')
 
 const server = require('../index')
 const codeHTTP = require('../constant/')
+const testMessages = require('./testConstants')
 
 const localURL = `http://localhost:${server.get('port')}`
 const telegramGoodConversationId = '7b603af4-1096-43f5-8cef-4784fe14893a'
 const telegramGoodSenderId = '464387541'
 
-const shouldRespond = 'should respond'
-const toPost = 'to post'
-const when = 'when'
 const hasBeenProvided = 'has been provided'
 
-const shouldBadRequestTestMessage = `${shouldRespond} ${codeHTTP.BAD_REQUEST} ${toPost} ${when}`
+const shouldBadRequestTestMessage = `${testMessages.shouldRespond} ${codeHTTP.BAD_REQUEST} ${testMessages.toPost} ${testMessages.when}`
 
 chai.use(chaiHttp)
 
@@ -81,12 +79,12 @@ describe('api', function() {
           senderId: telegramGoodSenderId
         },
         data: senderId,
-        testDescription: `${shouldRespond} ${codeHTTP.SUCCESS} ${toPost} ${when} all necessary data ${hasBeenProvided}`,
+        testDescription: `${testMessages.shouldRespond} ${codeHTTP.SUCCESS} ${testMessages.toPost} ${testMessages.when} all necessary data ${hasBeenProvided}`,
         path: '/'
       },
       {
         expectedCodeHTTP: codeHTTP.NOT_FOUND,
-        testDescription: `${shouldRespond} ${codeHTTP.NOT_FOUND} ${toPost} at /foo ${when} route is not found`,
+        testDescription: `${testMessages.shouldRespond} ${codeHTTP.NOT_FOUND} ${testMessages.toPost} at /foo ${testMessages.when} route is not found`,
         path: '/foo'
       }
     ]

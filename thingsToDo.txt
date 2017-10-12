@@ -111,7 +111,15 @@
 
 1 POMODORO
 
-- Do one recast tuto
+- Do one recast tuto (Success)
+- Train bot on Recast.AI (Success)
+- Try language change functionnality (Success)
+- Avoid duplications (Success)
+
+2 POMODORO
+
+- Put nodemon
+- Try language change functionnality
 
 Important code + commands
 # netstat -ntlp | grep LISTEN
