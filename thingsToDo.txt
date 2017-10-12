@@ -18,25 +18,105 @@
 - Use a multilingual bot (Continue) (Success)
 - Use a multilingual bot (Continue) (Success)
 - Redo starter kit (Contenur) (Success)
-- Redo starter kit (Continue)
+3 POMODORO
 
+- Redo starter kit (Continue) (Success)
+- Redo starter kit (Continue) (Success)
+- Redo starter kit (Continue) (Success)
+- Ajout de tests unitaires (Success)
+1 POMODORO
 
+- Ajout de tests unitaires (Success)
+- Ajout de tests unitaires (Success)
+- Ajout de tests unitaires (Success)
+- Ajout de tests unitaires (Success)
 
+2 POMODORO
 
+- Ajout de tests unitaires (Success)
+- Ajout de tests unitaires (Success)
+- Ajout de tests unitaires (Success)
+- Enlever recastai module (Success)
 
+3 POMODORO
 
-* Understand Supervisor behavior
-    https://hexdocs.pm/elixir/Supervisor.html
-* Checkout the message payload page
+- Enlever recastai module (Success)
+- Enlever recastai module (Success)
+- Enlever recastai module (Success)
+- Enlever recastai module (Success)
+
+4 POMODORO
+
+- Avancer tests unitaires (Success)
+- Avancer tests unitaires (Success)
+- Avancer gestions d'erreurs (Success)
+- Ajouter code coverage (Success)
+
+1 POMODORO
+
+- S'organiser pour Station F (Success)
+- Handling errors (Success)
+- Divide NodeJS into units (Success)
+- Checkout the message payload page (Success)
     https://github.com/RecastAI/SDK-NodeJS/wiki/Message-payload
-* Checkout GenServer behavior with Elixir
-    https://hexdocs.pm/elixir/GenServer.html
-* Checkout RAN
-    https://medium.com/assist/theres-a-dozen-ways-to-order-a-coffee-why-do-dumb-bots-only-allow-one-27230542636d
-* Put NodeJS robot linter on Visual Studio
-* Install nodemon
-* Configurer Visual Studio space à 2
+
+2 POMODORO
+
+- Put NodeJS robot linter on Visual Studio (Success)
+- Organiser le save et save-dev (npm) (Success)
+- Divide NodeJS into units (Success)
+- Do error handling (SUCCESS)
+
+3 POMODORO
+
+- Avoid duplication (Success)
+- Test function req, res... express (Success)
+- Essayer le connector de skype (Success)
+- Funfunfunction error handling (Success)
+
+4 POMODORO
+
+- Test function req, res... express (Success)
+- See last lessons on funfunfunction (Success)
+- Try to replace request to fetch (Success)
+- Try to replace request to fetch (Success)
+
+1 POMODORO
+
+- Watch funfunfunction graphql video (Success)
+- Watch mocha and chai doc (Success)
+- Do coverage for all (Success)
+- Avoid duplications (Success)
+
+2 POMODORO
+
+- Avoid duplications (Success)
+- Advance mocha + chai doc (Success)
+- Do coverage for all (Success)
+- Start TDD (Success)
+
+3 POMODORO
+
+- Train bot on Recast.AI (Success)
+- Avoid duplications (Success)
+- Do one recast tuto (Success)
+- Advance mocha + chai doc (Success)
+
+4 POMODORO
+
+- Do one recast tuto (Success)
+- Train bot on Recast.AI (Success)
+- Advance chai bot (Success)
+- Continue TDD (Success)
+
+1 POMODORO
+
+- Do one recast tuto
 
 Important code + commands
 # netstat -ntlp | grep LISTEN
 # mix run —no-halt (run vigile)
+# UPDATE VSCODE
+# wget https://vscode-update.azurewebsites.net/latest/linux-deb-x64/stable -O /tmp/code_latest_amd64.deb
+# sudo dpkg -i /tmp/code_latest_amd64.deb
+# UPDATE VSCODE
