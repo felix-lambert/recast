@@ -6,6 +6,8 @@ const app = express()
 const talkToBot = require('./app/talkToBot').talkToBotMain
 const codeHTTP = require('./constant/')
 
+require('./app/config/db')
+
 app.set('port', 5000)
 
 app.use(bodyParser.json())
@@ -15,7 +17,6 @@ app.post('/', talkToBot)
 
 // It's important to put at the end
 app.use((err, req, res, next) => {
-  console.log(err.message)
   if (!res.headersSent) {
     res.status(codeHTTP.BAD_REQUEST).send({error: err.message})
   }

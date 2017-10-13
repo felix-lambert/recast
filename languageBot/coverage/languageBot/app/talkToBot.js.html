@@ -30,9 +30,9 @@
         <span class='fraction'>6/6</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">90% </span>
+        <span class="strong">80% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>9/10</span>
+        <span class='fraction'>8/10</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">91.3% </span>
@@ -99,8 +99,7 @@
 54
 55
 56
-57
-58</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+57</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -112,7 +111,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -125,17 +124,17 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -144,11 +143,10 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -176,8 +174,8 @@ function sendToRecast(url, jsonData) {
 }
 &nbsp;
 const processBotResponse = (senderId, textMessageToSendToBot, conversation, language = 'en') =&gt; (
-  new Promise((resolve, reject) =&gt; {
-    return sendToRecast(`${recastAPIURL}/v2/converse`, {
+  new Promise((resolve, reject) =&gt; (
+    sendToRecast(`${recastAPIURL}/v2/converse`, {
       text: textMessageToSendToBot,
       language: language,
       conversation_token: senderId
@@ -192,20 +190,19 @@ const processBotResponse = (senderId, textMessageToSendToBot, conversation, lang
           }]
         }).then(sendDiscussionRes =&gt; resolve(sendDiscussionRes)
       ).catch(err =&gt; reject(err))
-    }).catch(err =&gt; reject(err))
-  })
+    }).catch(<span class="fstat-no" title="function not covered" >er</span>r =&gt; <span class="cstat-no" title="statement not covered" >reject(err))</span>
+  ))
 )
 &nbsp;
 const talkToBotMain = (req, response, next) =&gt; {
   if (req.body.message &amp;&amp; req.body.message.conversation &amp;&amp; req.body.senderId) {
     const { senderId, message } = req.body
 &nbsp;
+    console.log('A message has been received: ', message)
+    // const currentUser = users.find(u =&gt; u.senderId === message.senderId)
     return processBotResponse(senderId, message.attachment.content, message.conversation)
       .then(res =&gt; response.status(codeHTTP.SUCCESS).json(res))
-      .catch(<span class="fstat-no" title="function not covered" >er</span>r =&gt; {
-<span class="cstat-no" title="statement not covered" >        console.log('inside catch')</span>
-<span class="cstat-no" title="statement not covered" >        return next(err)</span>
-      })
+      .catch(<span class="fstat-no" title="function not covered" >er</span>r =&gt; <span class="cstat-no" title="statement not covered" >next(err))</span>
   } else {
     return next(new Error('Some data has not been provided'))
   }
@@ -220,7 +217,7 @@ module.exports = {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Oct 12 2017 18:29:05 GMT+0200 (CEST)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Oct 13 2017 00:42:53 GMT+0200 (CEST)
 </div>
 </div>
 <script src="../../prettify.js"></script>

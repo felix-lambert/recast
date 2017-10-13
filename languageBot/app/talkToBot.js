@@ -17,8 +17,8 @@ function sendToRecast(url, jsonData) {
 }
 
 const processBotResponse = (senderId, textMessageToSendToBot, conversation, language = 'en') => (
-  new Promise((resolve, reject) => {
-    return sendToRecast(`${recastAPIURL}/v2/converse`, {
+  new Promise((resolve, reject) => (
+    sendToRecast(`${recastAPIURL}/v2/converse`, {
       text: textMessageToSendToBot,
       language: language,
       conversation_token: senderId
@@ -34,19 +34,18 @@ const processBotResponse = (senderId, textMessageToSendToBot, conversation, lang
         }).then(sendDiscussionRes => resolve(sendDiscussionRes)
       ).catch(err => reject(err))
     }).catch(err => reject(err))
-  })
+  ))
 )
 
 const talkToBotMain = (req, response, next) => {
   if (req.body.message && req.body.message.conversation && req.body.senderId) {
     const { senderId, message } = req.body
 
+    console.log('A message has been received: ', message)
+    // const currentUser = users.find(u => u.senderId === message.senderId)
     return processBotResponse(senderId, message.attachment.content, message.conversation)
       .then(res => response.status(codeHTTP.SUCCESS).json(res))
-      .catch(err => {
-        console.log('inside catch')
-        return next(err)
-      })
+      .catch(err => next(err))
   } else {
     return next(new Error('Some data has not been provided'))
   }

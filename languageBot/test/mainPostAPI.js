@@ -3,11 +3,10 @@ const chaiHttp = require('chai-http')
 
 const server = require('../index')
 const codeHTTP = require('../constant/')
-const testMessages = require('./testConstants')
+const testMessages = require('./testConstants').testMessages
+const goodTestIdentifications = require('./testConstants').goodTestIdentifications
 
 const localURL = `http://localhost:${server.get('port')}`
-const telegramGoodConversationId = '7b603af4-1096-43f5-8cef-4784fe14893a'
-const telegramGoodSenderId = '464387541'
 
 const hasBeenProvided = 'has been provided'
 
@@ -36,8 +35,6 @@ describe('api', function() {
 
     const data = 'data'
     const no = 'no'
-    const conversationId = 'conversationId'
-    const senderId = 'senderId'
 
     const tests = [
       {
@@ -48,15 +45,14 @@ describe('api', function() {
       },
       {
         expectedCodeHTTP: codeHTTP.BAD_REQUEST,
-        dataToSend: { 
+        dataToSend: {
           message: { 
             attachment: { content: 'hello' }
           },
-          senderId: telegramGoodSenderId
+          senderId: goodTestIdentifications.telegramGoodSenderId
         },
         path: '/',
-        data: conversationId,
-        testDescription: `${shouldBadRequestTestMessage} ${no} ${conversationId} ${hasBeenProvided}`
+        testDescription: `${shouldBadRequestTestMessage} ${no} conversation id ${hasBeenProvided}`
       },
       {
         expectedCodeHTTP: codeHTTP.BAD_REQUEST,
@@ -65,20 +61,18 @@ describe('api', function() {
             attachment: { content: 'hello' }
           }
         },
-        data: senderId,
-        testDescription: `${shouldBadRequestTestMessage} ${no} ${senderId} ${hasBeenProvided}`,
+        testDescription: `${shouldBadRequestTestMessage} ${no} sender id ${hasBeenProvided}`,
         path: '/'
       },
       {
         expectedCodeHTTP: codeHTTP.SUCCESS,
         dataToSend: { 
           message: { 
-            conversation: telegramGoodConversationId,
+            conversation: goodTestIdentifications.telegramGoodConversationId,
             attachment: { content: 'hello' }
           },
-          senderId: telegramGoodSenderId
+          senderId: goodTestIdentifications.telegramGoodSenderId
         },
-        data: senderId,
         testDescription: `${testMessages.shouldRespond} ${codeHTTP.SUCCESS} ${testMessages.toPost} ${testMessages.when} all necessary data ${hasBeenProvided}`,
         path: '/'
       },
@@ -89,18 +83,23 @@ describe('api', function() {
       }
     ]
 
+    function handleErrors(promise) {
+      return promise.catch((err) => {
+        if (err.status == 400 || err.status == 404) {
+          return err
+        }
+        throw err
+      })
+    }
+
     tests.forEach(function(test) {
-      it(test.testDescription, function(done) {
-        chai.request(`${localURL}`).post(test.path).send(test.dataToSend)
-          .then(function(response) {
-            chai.assert.strictEqual(response.body.message, 'Messages successfully posted')
-            chai.assert.strictEqual(response.status, test.expectedCodeHTTP)
-            done()
-          })
-          .catch(function(error) {
-            chai.assert.strictEqual(error.status, test.expectedCodeHTTP)
-            done()
-          })
+      it(test.testDescription, async function() {
+        const res = await handleErrors(chai.request(`${localURL}`).post(test.path).send(test.dataToSend))
+        if (test.expectedCodeHTTP === 200) {
+          chai.assert.strictEqual(res.body.message, 'Messages successfully posted')
+        } else {
+          chai.assert.strictEqual(res.status, test.expectedCodeHTTP)
+        }
       })
     })
   })

@@ -4,4 +4,12 @@ const testMessages = {
   when: 'when'
 }
 
-module.exports = testMessages
+const goodTestIdentifications = {
+  telegramGoodConversationId: '7b603af4-1096-43f5-8cef-4784fe14893a',
+  telegramGoodSenderId: '464387541'
+}
+
+module.exports = {
+  testMessages,
+  goodTestIdentifications
+}

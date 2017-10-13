@@ -118,8 +118,15 @@
 
 2 POMODORO
 
-- Put nodemon
+- Put nodemon (Success)
+- Try language change functionnality (Success)
+- Avoid duplications (Success)
+- Install MongoDB
+
+3 POMODORO
+
 - Try language change functionnality
+- Continue TDD
 
 Important code + commands
 # netstat -ntlp | grep LISTEN
